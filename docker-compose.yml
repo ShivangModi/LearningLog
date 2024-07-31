@@ -1,0 +1,11 @@
+version: '1'
+
+services:
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver"
+    container_name: LearningLog
+    volumes:
+      - .:/LearningLog
+    ports:
+      - "8000:8000"
